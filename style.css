@@ -1,0 +1,151 @@
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #085255d0;
+}
+
+.sortable-list {
+  width: 425px;
+  padding: 30px 25px 20px;
+  background: #fff;
+  border-radius: 7px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sortable-list .item {
+  list-style: none;
+  display: flex;
+  cursor: move;
+  background: #a4cfcf;
+  align-items: center;
+  border-radius: 5px;
+  padding: 10px 13px;
+  margin-bottom: 11px;
+  border: 1px solid #ccc;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.item .details {
+  display: flex;
+  align-items: center;
+}
+
+.item .details img {
+  height: 43px;
+  width: 43px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.item .details span {
+  font-size: 1.13rem;
+}
+
+.item i {
+  color: #474747;
+  font-size: 1.13rem;
+}
+
+.item.dragging {
+  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white */
+  transform: scale(1.02); /* Slightly enlarge the item */
+  filter: blur(3px); /* Apply blur effect */
+}
+
+.item.dragging :where(.details, i) {
+  opacity: 0;
+}
+
+/* Button Base Styling */
+button {
+  padding: 12px 30px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 180px; /* Set fixed width to make buttons the same length */
+}
+
+/* Undo Button Styling */
+#undo-btn {
+  background: linear-gradient(135deg, #ff4d6d, #d84e78); /* Gradient background */
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-bottom: 15px;
+}
+
+#undo-btn:hover {
+  transform: scale(1.05); /* Slight enlargement on hover */
+  background: linear-gradient(135deg, #388e3c, #2c6c2b); /* Darker shade on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+#undo-btn:active {
+  transform: scale(0.98); /* Slight shrinking effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on click */
+}
+
+/* Add Row Button Styling */
+#add-row-btn {
+  background: linear-gradient(135deg, #e14b6c, #c84b6a); /* Green gradient */
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-bottom: 15px;
+}
+
+#add-row-btn:hover {
+  transform: scale(1.05); /* Slight enlargement on hover */
+  background: linear-gradient(135deg, #388e3c, #2c6c2b); /* Darker shade on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+}
+
+#add-row-btn:active {
+  transform: scale(0.98); /* Slight shrinking effect */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on click */
+}
+
+/* Ensure space between buttons */
+#undo-btn, #add-row-btn {
+  margin: 10px 0; /* Add space between buttons */
+}
+
+
+
+#redo-btn {
+  background: linear-gradient(135deg, #4db8ff, #2d8df0); /* Blue gradient */
+  color: #fff;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#redo-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #2d8df0, #1b6cbc);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#redo-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
